@@ -22,16 +22,16 @@ class Profile extends React.Component {
                 <div className="profile-description">ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น</div>
             </div>
             <Row gutter={8} style={{padding: '10px'}}>
-                <Col span={6}>
+                <Col className="profile-stat" span={6}>
                     <Card>Follow</Card>
                 </Col>
-                <Col span={6}>
+                <Col className="profile-stat" span={6}>
                     <Card>Favorite</Card>
                 </Col>
-                <Col span={6}>
+                <Col className="profile-stat" span={6}>
                     <Card>Test</Card>
                 </Col>
-                <Col span={6}>
+                <Col className="profile-stat" span={6}>
                     <Card>Test</Card>
                 </Col>
             </Row>
