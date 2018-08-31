@@ -19,8 +19,8 @@
     padding: 5px 10px 0;
 }
 
-/*.profile-stat {*/
-    /*border: 1px solid;*/
-    /*color: #000;*/
-    /*height: 10vh;*/
-/*}*/
+.profile-stat {
+    border: 1px solid;
+    color: #000;
+    height: 10vh;
+}
