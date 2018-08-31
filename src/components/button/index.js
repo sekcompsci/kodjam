@@ -1,5 +1,9 @@
 import React from 'react';
 import { Button, Radio, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
+
+
 
 class ButtonSize extends React.Component {
     state = {
