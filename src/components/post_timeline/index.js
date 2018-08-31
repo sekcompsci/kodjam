@@ -50,5 +50,5 @@ class PostTimeline extends Component {
     )
   }
 }
-const WrappedPost = Form.create()(PostTimeline);
-export default WrappedPost
+const WrappedPostTimeline = Form.create()(PostTimeline);
+export default WrappedPostTimeline
