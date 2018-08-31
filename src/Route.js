@@ -10,6 +10,7 @@ import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 // import Nodepie from './components/nodepie/nodepie';
 // import PageNotFound from './components/pagenotfound/pagenotfound';
 import App from './App'
+import Profile from './components/profile'
 
 class AppRoute extends React.Component {
     render() {
@@ -17,14 +18,8 @@ class AppRoute extends React.Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={App}/>
+                    <Route exact path="/profile" component={Profile}/>
                     {/*<Route exact path="/application" component={Application}/>*/}
-                    {/*<Route exact path="/application/:app" component={ApplicationApp}/>*/}
-                    {/*<Route exact path="/application/:app/:key" component={Devices}/>*/}
-                    {/*<Route exact path="/freeboard" component={Freeboard}/>*/}
-                    {/*<Route exact path="/feed" component={Feed}/>*/}
-                    {/*<Route exact path="/nodepie" component={Nodepie}/>*/}
-                    {/*<Route exact path="/login" component={() => (<h1>Login</h1>)}/>*/}
-                    {/*<Route exact path="/register" component={() => (<h1>Register</h1>)}/>*/}
                     {/*<Route exact path="/404" component={PageNotFound}/>*/}
                     {/*<Redirect from="*" to="/404"/>*/}
                     <Redirect from="*" to="/"/>
