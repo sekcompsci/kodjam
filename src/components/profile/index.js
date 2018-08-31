@@ -15,7 +15,7 @@ Profile.propTypes = {
 };
 
 Profile.defaultProps = {
-    command: 1
+    command: 'Sirawit Moonrinta'
 };
 
 const mapStateToProps = state => {
@@ -28,4 +28,4 @@ const mapDispatchToProps = {
     createApp
 };
 
-export default connect(null, mapDispatchToProps)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)
