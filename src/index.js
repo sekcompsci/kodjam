@@ -4,6 +4,7 @@ import {createStore} from "redux";
 import {Provider} from 'react-redux';
 import Reducer from './reducers/index';
 import Route from './Route'
+import 'antd/dist/antd.css';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
