@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import PostTimelineBar from './posttimelinebar'
 import PostReviewBar from './postreviewbar'
 import Mainbar from './mainbar'
@@ -23,4 +24,10 @@ class FooterBar extends Component {
     }
 }
 
-export default FooterBar
+const mapStateToProps = state => {
+    return {
+        typeBar: state.settings.footerType
+    }
+};
+
+export default connect(mapStateToProps)(FooterBar);

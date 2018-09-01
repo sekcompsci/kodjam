@@ -7,6 +7,7 @@ import ProfileFeed from '../profile-feed';
 import firebase from "firebase/app";
 import {Cookies, withCookies} from 'react-cookie';
 import {instanceOf} from 'prop-types';
+import {selectTab, selectFooterType} from "../../actions/settings";
 
 class Profile extends React.Component {
     state = {
@@ -79,6 +80,7 @@ class Profile extends React.Component {
             <div>
                 <header className="avatar-header">
                     <TiArrowLeftThick className="icon-app" onClick={() => {
+                        this.props.selectTab(0);
                         this.props.history.push(`/feed`)
                     }}/>
                     {this.state.own ? <TiCogOutline className="icon-app" style={{float: 'right'}}/> : ''}
@@ -172,10 +174,9 @@ Profile.propTypes = {
     cookies: instanceOf(Cookies).isRequired
 };
 
-const mapStateToProps = state => {
-    return {
-        uid: state.users.uid
-    }
+const mapDispatchToProps = {
+    selectTab,
+    selectFooterType
 };
 
-export default withCookies(connect(mapStateToProps)(Profile))
+export default withCookies(connect(null, mapDispatchToProps)(Profile))

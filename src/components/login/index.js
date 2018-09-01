@@ -2,12 +2,10 @@ import React, {Component} from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import {connect} from 'react-redux';
-import {setUserID} from "../../actions/user";
-import './login.css';
 import {Button, Divider, Form, Icon, Input} from 'antd';
 import {Cookies, withCookies} from 'react-cookie';
 import {instanceOf} from 'prop-types';
+import './login.css';
 
 class Login extends Component {
     state = {
@@ -110,9 +108,5 @@ Login.propTypes = {
     cookies: instanceOf(Cookies).isRequired
 };
 
-const mapDispatchToProps = {
-    setUserID
-};
-
-export default withCookies(Form.create()(connect(null, mapDispatchToProps)(Login)));
+export default withCookies(Form.create()(Login));
 

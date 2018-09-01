@@ -1,9 +1,9 @@
 import React from 'react';
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import firebase from "firebase";
-import App from './App'
-import Profile from './components/profile'
-import Login from './components/login'
+import App from './App';
+import Profile from './components/profile';
+import Login from './components/login';
 
 
 class AppRoute extends React.Component {
@@ -30,7 +30,6 @@ class AppRoute extends React.Component {
                         <App>
                             <Route exact path="/feed" component={() => <div>Hello World!</div>}/>
                             <Route exact path="/profile/:uid" component={Profile}/>
-                            <Redirect from="*" to="/feed"/>
                         </App>
                     </Switch>
             </BrowserRouter>

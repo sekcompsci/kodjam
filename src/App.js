@@ -10,7 +10,7 @@ class App extends Component {
             <div className="App">
                 {/*<Header history={this.props.history} typeBar="main" icon={true} title="Timeline"/>*/}
                 {this.props.children}
-                <Footer typeBar="main" ForTimelineisFirst={false}/>
+                <Footer ForTimelineisFirst={false}/>
             </div>
         );
     }
