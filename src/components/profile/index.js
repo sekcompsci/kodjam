@@ -6,6 +6,8 @@ import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import {createApp} from '../../actions/application';
 import './profile.css';
 
+import Footer from '../footer';
+
 class Profile extends React.Component {
     render() {
         return <div>
@@ -46,6 +48,7 @@ class Profile extends React.Component {
                     </div>
                 </Col>
             </Row>
+            <Footer typeBar="main" />
         </div>
     }
 }
