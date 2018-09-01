@@ -6,6 +6,8 @@ import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import {createApp} from '../../actions/application';
 import './profile.css';
 
+import Footer from '../footer';
+
 class Profile extends React.Component {
     render() {
         return <div>
@@ -18,24 +20,35 @@ class Profile extends React.Component {
             </Row>
             <div style={{textAlign: 'center', paddingTop: '5px'}}>
                 <div className="profile-name">{this.props.name}</div>
-                <div className="profile-description">ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น</div>
+                <div className="profile-description">"{this.props.description}"</div>
             </div>
             <Row gutter={8} style={{margin: '10px 8px'}}>
                 <Col span={8}>
                     <div className="profile-stat">
-                        <div style={{marginTop: '0.4em'}}>
+                        <div className="box">
                             <div><b>500</b></div>
-                            <div>Follow</div>
+                            <div className="title">Follow</div>
                         </div>
                     </div>
                 </Col>
                 <Col span={8}>
-                    <div className="profile-stat">Favorite</div>
+                    <div className="profile-stat">
+                        <div className="box">
+                            <div><b>24</b></div>
+                            <div className="title">Favorite</div>
+                        </div>
+                    </div>
                 </Col>
                 <Col span={8}>
-                    <div className="profile-stat">Test</div>
+                    <div className="profile-stat">
+                        <div className="box">
+                            <div><b>100</b></div>
+                            <div className="title">Timeline</div>
+                        </div>
+                    </div>
                 </Col>
             </Row>
+            <Footer typeBar="main" />
         </div>
     }
 }
@@ -50,7 +63,8 @@ Profile.defaultProps = {
 
 const mapStateToProps = state => {
     return {
-        name: state.name
+        name: state.name,
+        description: "ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น"
     }
 };
 
