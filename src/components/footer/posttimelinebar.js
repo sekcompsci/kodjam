@@ -32,7 +32,7 @@ class PostTimelineBar extends Component {
                         indicatorColor="primary"
                         textColor="primary"
                     >
-                        <Tab key="FlagBlue" label="FlagBlue"/>
+                        <Tab key="FlagBlue" label="Start"></Tab>
                     </Tabs>
                 </Paper>
             )
@@ -57,8 +57,8 @@ class PostTimelineBar extends Component {
                         indicatorColor="primary"
                         textColor="primary"
                     >
-                        <Tab key="FlagGreen" label="FlagGreen"/>
-                        <Tab key="FlagBlue" label="FlagBlue"/>
+                        <Tab key="FlagGreen" label="Next"/>
+                        <Tab key="FlagBlue" label="End"/>
                     </Tabs>
                 </Paper>
             )
