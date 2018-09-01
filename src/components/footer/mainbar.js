@@ -5,6 +5,7 @@ import Tab from '@material-ui/core/Tab';
 import {Cookies, withCookies} from 'react-cookie';
 import {instanceOf} from 'prop-types';
 import {Link} from 'react-router-dom';
+import {Icon} from 'antd';
 
 class Mainbar extends Component {
     state = {
@@ -20,7 +21,7 @@ class Mainbar extends Component {
             <Paper square
                    style={{
                        backgroundColor: '#2980b9',
-                       lineHeight: '46px',
+                       lineHeight: '30px',
                        textAlign: 'center',
                        width: '100%',
                        position: 'fixed',
@@ -34,12 +35,18 @@ class Mainbar extends Component {
                     textColor="primary"
                     fullWidth
                 >
-                    <Tab key="Search" label={<Link to='/rank' style={{color: '#ecf0f1'}}>Search</Link>}/>
-                    <Tab key="Flag" label={<Link to='/feed' style={{color: '#ecf0f1'}}>Flag</Link>}/>
+                    <Tab key="Search" label={<Link to='/search' style={{color: '#ecf0f1'}}>
+                        <Icon type="search" style={{fontSize: '1.7rem', marginTop: '5px'}}/>
+                    </Link>}/>
+                    <Tab key="Flag" label={<Link to='/flag' style={{color: '#ecf0f1'}}>
+                        <Icon type="flag" style={{position: 'relative', fontSize: '2.5rem', marginTop: '-20px', paddingTop: '20px'}}/>
+                    </Link>}/>
                     <Tab key="Profile"
                          label={
                              <Link to={'/profile/' + this.props.cookies.get('FIREBASEUID')}
-                                   style={{color: '#ecf0f1'}}>Profile
+                                   style={{color: '#ecf0f1'}}
+                             >
+                                 <Icon type="user" style={{ fontSize: '1.7rem', marginTop: '5px' }}/>
                              </Link>
                          }
                     />
