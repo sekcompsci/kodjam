@@ -1,0 +1,54 @@
+$img-blur: blur(5px);
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url("https://images.unsplash.com/photo-1505855265981-d52719d1f64e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf90998a0fb366ac0e73fce27ba7d3fc&auto=format&fit=crop&w=802&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.9;
+
+  -webkit-filter: $img-blur;
+  -moz-filter: $img-blur;
+  -o-filter: $img-blur;
+  -ms-filter: $img-blur;
+  filter: $img-blur;
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  h1 {
+    color: azure;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
+
+  .login-form {
+    margin: 18vh 5vw 0;
+  }
+
+  .inputOpasity {
+    opacity: 0.5;
+  }
+
+  .ant-divider-inner-text {
+    color: azure;
+    margin: 15px 0;
+  }
+}
