@@ -15,8 +15,9 @@ ReactDOM.render(
     <CookiesProvider>
         <Provider store={store}>
             <Route/>
-        </Provider>, document.getElementById('root')
-    </CookiesProvider>
+        </Provider>
+    </CookiesProvider>, document.getElementById('root')
+
 );
 
 registerServiceWorker();

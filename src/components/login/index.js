@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 import {setUserID} from "../../actions/user";
 import './login.css';
 import {Button, Divider, Form, Icon, Input} from 'antd';
-import { withCookies, Cookies } from 'react-cookie';
+import {Cookies, withCookies} from 'react-cookie';
+import {instanceOf} from 'prop-types';
 
 class Login extends Component {
     state = {
@@ -28,7 +29,7 @@ class Login extends Component {
     componentDidMount() {
         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
             (user) => {
-                this.setState({ isSignedIn: user });
+                this.setState({isSignedIn: user});
                 if (user) {
                     let userpath = 'Users/' + firebase.auth().currentUser.uid;
                     let db = firebase.database().ref(userpath);
@@ -50,7 +51,7 @@ class Login extends Component {
                         }
                     });
 
-                    this.props.setUserID(firebase.auth().currentUser.uid);
+                    this.props.cookies.set('FIREBASEUID', firebase.auth().currentUser.uid);
                 }
             }
         );
@@ -104,9 +105,13 @@ class Login extends Component {
     }
 }
 
+Login.propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+};
+
 const mapDispatchToProps = {
     setUserID
 };
 
-export default Form.create()(connect(null, mapDispatchToProps)(Login));
+export default withCookies(Form.create()(connect(null, mapDispatchToProps)(Login)));
 

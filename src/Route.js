@@ -31,7 +31,7 @@ class AppRoute extends React.Component {
                 <Switch>
                     <Route exact path="/" component={Login}/>
                     <Route exact path="/feed" component={App}/>
-                    <Route exact path="/profile" component={Profile}/>
+                    <Route exact path="/profile/:uid" component={Profile}/>
                     {/*<Route exact path="/application" component={Application}/>*/}
                     {/*<Route exact path="/404" component={PageNotFound}/>*/}
                     {/*<Redirect from="*" to="/404"/>*/}

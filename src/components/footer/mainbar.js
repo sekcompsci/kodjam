@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import {Cookies, withCookies} from 'react-cookie';
+import {instanceOf} from 'prop-types';
 
 class Mainbar extends Component {
     state = {
@@ -23,7 +25,7 @@ class Mainbar extends Component {
                 break;
             }
             case 2: {
-                this.props.history.push(`/profile`);
+                this.props.history.push(`/profile/${this.props.cookies.get('FIREBASEUID')}`);
 
                 break;
             }
@@ -62,4 +64,8 @@ class Mainbar extends Component {
     }
 }
 
-export default Mainbar
+Mainbar.propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+};
+
+export default withCookies(Mainbar)
