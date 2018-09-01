@@ -23,7 +23,7 @@ class Profile extends React.Component {
                 <TiArrowLeftThick className="icon-app" onClick={() => {
                     this.props.history.push(`/login`)
                 }}/>
-                {this.props.own ? '':<TiCogOutline className="icon-app" style={{float: 'right'}}/>}
+                {this.props.own ? <TiCogOutline className="icon-app" style={{float: 'right'}}/>:''}
             </header>
             <Row type="flex" justify="center">
                 <Col className="avatar"><Avatar shape="square" size={120} src={this.props.profile_picture}/></Col>
@@ -82,7 +82,7 @@ class Profile extends React.Component {
                 <Card
                     style={{ margin: '20px 10px' }}
                     cover={<img alt="example" src="https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bec431d5c80ae862ceba47454d36d9cc&auto=format&fit=crop&w=1701&q=80" />}
-                    actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+                    actions={this.props.own?[<Icon type="edit" />, <Icon type="ellipsis" />]:''}
                 >
                     <Meta
                         avatar={<Avatar src={this.props.profile_picture} />}
@@ -93,7 +93,7 @@ class Profile extends React.Component {
                 <Card
                     style={{ margin: '20px 10px' }}
                     cover={<img alt="example" src="https://images.unsplash.com/photo-1524027556923-66e7ec51e251?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2125b2ecf005515f7701153a086d4789&auto=format&fit=crop&w=1950&q=80" />}
-                    actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+                    actions={this.props.own?[<Icon type="edit" />, <Icon type="ellipsis" />]:''}
                 >
                     <Meta
                         avatar={<Avatar src={this.props.profile_picture} />}
@@ -104,7 +104,7 @@ class Profile extends React.Component {
                 <Card
                     style={{ margin: '20px 10px' }}
                     cover={<img alt="example" src="https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjI0MX0&s=436a11a0fee324bde54ffd8d515c3ab1&auto=format&fit=crop&w=1950&q=80" />}
-                    actions={[<Icon type="edit" />, <Icon type="ellipsis" />]}
+                    actions={this.props.own?[<Icon type="edit" />, <Icon type="ellipsis" />]:''}
                 >
                     <Meta
                         avatar={<Avatar src={this.props.profile_picture} />}
