@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {Avatar, Card, Col, Row} from 'antd';
+import {Avatar, Col, Row} from 'antd';
 import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import './profile.css';
 
@@ -21,18 +21,20 @@ class Profile extends React.Component {
                 <div className="profile-name">{this.props.name}</div>
                 <div className="profile-description">ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น</div>
             </div>
-            <Row gutter={8} style={{padding: '10px'}}>
-                <Col className="profile-stat" span={6}>
-                    <Card>Follow</Card>
+            <Row gutter={8} style={{margin: '10px 8px'}}>
+                <Col span={8}>
+                    <div className="profile-stat">
+                        <div style={{marginTop: '0.4em'}}>
+                            <div><b>500</b></div>
+                            <div>Follow</div>
+                        </div>
+                    </div>
                 </Col>
-                <Col className="profile-stat" span={6}>
-                    <Card>Favorite</Card>
+                <Col span={8}>
+                    <div className="profile-stat">Favorite</div>
                 </Col>
-                <Col className="profile-stat" span={6}>
-                    <Card>Test</Card>
-                </Col>
-                <Col className="profile-stat" span={6}>
-                    <Card>Test</Card>
+                <Col span={8}>
+                    <div className="profile-stat">Test</div>
                 </Col>
             </Row>
         </div>

@@ -20,7 +20,10 @@
 }
 
 .profile-stat {
-    border: 1px solid;
+    border: 1px solid #e8e8e8;
     color: #000;
     height: 10vh;
+    text-align: center;
+    text-align: -moz-center;
+    line-height: 20px;
 }
