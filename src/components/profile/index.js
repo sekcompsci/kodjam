@@ -122,7 +122,7 @@ class Profile extends React.Component {
                     </Col>
                 </Row>
                 <h4 className="achievement">ความสำเร็จ ({this.state.achievement})</h4>
-                <Row gutter={16} className="badge">
+                <Row gutter={16} className="badge" style={{margin: 0}}>
                     <Col span={4} style={{paddingLeft: '5%'}}>
                         <Avatar src="https://image.ibb.co/eoKofK/001_waterfall.png" alt="001_waterfall"/>
                     </Col>
