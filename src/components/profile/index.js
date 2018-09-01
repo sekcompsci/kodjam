@@ -14,7 +14,7 @@ class Profile extends React.Component {
 
     changeFollow = () => {
         this.setState({follow: !this.state.follow});
-    }
+    };
 
     render() {
         return <div>
@@ -77,6 +77,7 @@ class Profile extends React.Component {
                     <a style={{fontSize: '14px'}}>View all</a>
                 </Col>
             </Row>
+            <div style={{width: '100%', height: '5px', background: '#000'}} />
             <Footer typeBar="main"/>
         </div>
     }
