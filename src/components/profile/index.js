@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {Avatar, Col, Row} from 'antd';
+import {Avatar, Col, Row, Button} from 'antd';
 import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import './profile.css';
 
@@ -19,6 +19,7 @@ class Profile extends React.Component {
                 <Col className="avatar"><Avatar shape="square" size={120} src={this.props.profile_picture}/></Col>
             </Row>
             <div style={{textAlign: 'center', paddingTop: '5px'}}>
+                <Button type="primary" style={{margin: '5px'}}>Follow</Button>
                 <div className="profile-name">{this.props.name}</div>
                 <div className="profile-description">"{this.props.description}"</div>
             </div>
@@ -75,13 +76,13 @@ Profile.propTypes = {
     name: PropTypes.string
 };
 
-Profile.defaultProps = {
-    name: 'สิรวิชญ์ มูลรินต๊ะ'
-};
+// Profile.defaultProps = {
+//     name: 'สิรวิชญ์ มูลรินต๊ะ'
+// };
 
 const mapStateToProps = state => {
     return {
-        name: state.users.name,
+        name: state.users.name || 'สิรวิชญ์ มูลรินต๊ะ',
         profile_picture: state.users.picture,
         description: "ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น"
     }
