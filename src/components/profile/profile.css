@@ -17,8 +17,11 @@
 
 .profile-stat {
   border: 1px solid #e8e8e8;
-  color: #000;
+  color: rgba(0, 0, 0, 0.65);
   height: 10vh;
   text-align: center;
   text-align: -moz-center;
-  line-height: 20px; }
+  line-height: 20px;
+  padding: 0.4em; }
+  .profile-stat .box .title {
+    color: #bdc3c7; }
