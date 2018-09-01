@@ -1,0 +1,29 @@
+.avatar-header {
+    height: 20vh;
+    width: 100%;
+    background: #222222;
+}
+
+.avatar {
+    margin-top: -12vh;
+    position: relative;
+}
+
+.profile-name {
+    font-size: 1.6rem;
+}
+
+.profile-description {
+    font-size: 0.9rem;
+    color: darkgray;
+    padding: 5px 10px 0;
+}
+
+.profile-stat {
+    border: 1px solid #e8e8e8;
+    color: #000;
+    height: 10vh;
+    text-align: center;
+    text-align: -moz-center;
+    line-height: 20px;
+}

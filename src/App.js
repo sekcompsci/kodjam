@@ -3,7 +3,7 @@ import Footer from './components/footer';
 // import Review from './components/box_review';
 import PostTimeline from './components/post_timeline'
 import PostReview from './components/post_review'
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {
