@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Prompt');
 
-body {
-  margin: 0;
-  padding: 0;
+body, html {
+  position: relative;
   font-family: Prompt, sans-serif;
   font-size: 18px;
 }

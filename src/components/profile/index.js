@@ -81,7 +81,7 @@ class Profile extends React.Component {
                 <header className="avatar-header">
                     <TiArrowLeftThick className="icon-app" onClick={() => {
                         this.props.selectTab(0);
-                        this.props.history.push(`/feed`)
+                        this.props.history.push(`/feed`);
                     }}/>
                     {this.state.own ? <TiCogOutline className="icon-app" style={{float: 'right'}}/> : ''}
                 </header>
