@@ -24,25 +24,32 @@ class Login extends Component {
     };
 
     // Listen to the Firebase Auth state and set the local state.
-    componentWillMount() {
+    componentDidMount() {
         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
             (user) => {
-                if (!!user) {
-                    let profilePath = 'Profile/' + firebase.auth().currentUser.uid;
-                    let dbprofile = firebase.database().ref(profilePath);
-
-                    let jsonObj = {
-                        username: firebase.auth().currentUser.displayName,
-                        profileImage: firebase.auth().currentUser.photoURL
-                    };
-
-                    dbprofile.update(jsonObj);
-
-                    this.props.setName(firebase.auth().currentUser.displayName);
-                    this.props.setProfile(firebase.auth().currentUser.photoURL + '?height=300');
+                this.setState({ isSignedIn: user });
+                if (user) {
+                    let userpath = 'Users/' + firebase.auth().currentUser.uid;
+                    let db = firebase.database().ref(userpath)
+                    db.on('value', ss => {
+                        // Facebook Login Only
+                        if (ss.val() === null) {
+                            var jsonObj = {
+                                username: firebase.auth().currentUser.displayName,
+                                userimage: firebase.auth().currentUser.photoURL,
+                                follower_n: 0,
+                                following_n: 0,
+                                favorite: 0,
+                                timeline: 0,
+                                achievement: 0,
+                                caption: ""
+                            }
+                            db.update(jsonObj)
+                        }
+                    })
+                    // this.props.setName(firebase.auth().currentUser.displayName);
+                    // this.props.setProfile(firebase.auth().currentUser.photoURL + '?height=300');
                 }
-
-                this.setState({isSignedIn: !!user});
             }
         );
     }
