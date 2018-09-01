@@ -7,12 +7,12 @@ class HeaderBar extends Component {
     render() {
         if (this.props.typeBar === "main") {
             return (
-                <CustomBar typeBar="custom" icon={true} addtitle={this.props.title}/>
+                <CustomBar history={this.props.history} typeBar="custom" icon={true} addtitle={this.props.title}/>
             )
         }
         else if (this.props.typeBar === "search") {
             return (
-                <SearchBar/>
+                <SearchBar history={this.props.history}/>
             )
         }
         else {

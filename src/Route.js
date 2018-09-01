@@ -35,7 +35,7 @@ class AppRoute extends React.Component {
                     {/*<Route exact path="/application" component={Application}/>*/}
                     {/*<Route exact path="/404" component={PageNotFound}/>*/}
                     {/*<Redirect from="*" to="/404"/>*/}
-                    <Redirect from="*" to="/"/>
+                    <Redirect from="*" to="/feed"/>
                 </Switch>
             </BrowserRouter>
         );

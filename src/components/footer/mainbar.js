@@ -5,10 +5,32 @@ import Tab from '@material-ui/core/Tab';
 
 class Mainbar extends Component {
     state = {
-        value: 10,
+        value: 1,
     };
+
     handleChange = (event, value) => {
         this.setState({value});
+
+        switch (value) {
+            case 0: {
+                this.props.history.push(`/rack`);
+
+                break;
+            }
+            case 1: {
+                this.props.history.push(`/flag`);
+
+                break;
+            }
+            case 2: {
+                this.props.history.push(`/profile`);
+
+                break;
+            }
+            default: {
+                this.props.history.push(`/feed`);
+            }
+        }
     };
 
     render() {
@@ -30,16 +52,14 @@ class Mainbar extends Component {
                     indicatorColor="primary"
                     textColor="primary"
                 >
-                    <Tab key="Search" label="Search" onClick={() => this.props.history.push(`/search`)}/>
-                    <Tab key="Flag" label="Flag" onClick={() => this.props.history.push(`/timeline`)}/>
-                    <Tab key="Profile" label="Profile" onClick={() => this.props.history.push(`/profile`)}/>
+                    <Tab key="Search" label="Search"/>
+                    <Tab key="Flag" label="Flag"/>
+                    <Tab key="Profile" label="Profile"/>
                 </Tabs>
             </Paper>
         )
 
     }
-
-
 }
 
 export default Mainbar

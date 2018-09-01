@@ -6,7 +6,7 @@ import { TiArrowLeftThick, TiCogOutline } from "react-icons/ti";
 import './profile.css';
 import Footer from '../footer';
 import ProfileFeed from '../profile-feed';
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 class Profile extends React.Component {
     state = {
@@ -22,9 +22,8 @@ class Profile extends React.Component {
     };
 
     componentWillMount() {
-
-        let userpath = 'Users/' + 'bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
-        let db_userpath = firebase.database().ref(userpath)
+        let userpath = 'Users/bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
+        let db_userpath = firebase.database().ref(userpath);
 
         db_userpath.on('value', ss => {
             this.setState({
@@ -43,8 +42,8 @@ class Profile extends React.Component {
     }
 
     followState = () => {
-        let userpath = 'Users/' + 'bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
-        let db_userpath = firebase.database().ref(userpath)
+        let userpath = 'Users/bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
+        let db_userpath = firebase.database().ref(userpath);
         
         if (this.state.follow === false) {
             db_userpath.set({
@@ -71,11 +70,7 @@ class Profile extends React.Component {
             })
         }
         this.setState({ follow: !this.state.follow })
-    }
-
-    followUpdate() {
-
-    }
+    };
 
     render() {
         return (
@@ -163,7 +158,7 @@ class Profile extends React.Component {
                         own={this.props.own}
                     />
                 </div>
-                <Footer typeBar="main" />
+                <Footer history={this.props.history} typeBar="main" />
             </div>
         )
     }
@@ -174,7 +169,7 @@ Profile.propTypes = {
 };
 
 Profile.defaultProps = {
-    own: true,
+    own: false,
     follow: false
 };
 
