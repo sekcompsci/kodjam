@@ -19,7 +19,7 @@ class Login extends Component {
             firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
         callbacks: {
-            signInSuccess: () => this.props.history.push(`/`)
+            signInSuccess: () => this.props.history.push(`/feed`)
         }
     };
 

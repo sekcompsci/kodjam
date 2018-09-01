@@ -21,7 +21,7 @@ class Profile extends React.Component {
             <div>
                 <header className="avatar-header">
                     <TiArrowLeftThick className="icon-app" onClick={() => {
-                        this.props.history.push(`/`)
+                        this.props.history.push(`/feed`)
                     }}/>
                     {this.props.own ? <TiCogOutline className="icon-app" style={{float: 'right'}}/> : ''}
                 </header>
@@ -85,18 +85,21 @@ class Profile extends React.Component {
                         profile={this.props.profile_picture}
                         type="ได้โพส ไทม์ไลน์"
                         description="ทริปลุยเขา เผาไฟป่า"
+                        own={this.props.own}
                     />
                     <ProfileFeed
                         img="https://images.unsplash.com/photo-1524027556923-66e7ec51e251?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2125b2ecf005515f7701153a086d4789&auto=format&fit=crop&w=1950&q=80"
                         profile={this.props.profile_picture}
                         type="ได้โพส รีวิว"
                         description="เผาเสร็จแล้ว เที่ยวเขาหัวโล้นได้"
+                        own={this.props.own}
                     />
                     <ProfileFeed
                         img="https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjI0MX0&s=436a11a0fee324bde54ffd8d515c3ab1&auto=format&fit=crop&w=1950&q=80"
                         profile={this.props.profile_picture}
                         type="ได้โพส ไทม์ไลน์"
                         description="มิชชันแก้ผ้าหน้าหนาว"
+                        own={this.props.own}
                     />
                 </div>
                 <Footer typeBar="main"/>
@@ -110,7 +113,7 @@ Profile.propTypes = {
 };
 
 Profile.defaultProps = {
-    own: false,
+    own: true,
     follow: false
 };
 

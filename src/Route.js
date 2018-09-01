@@ -29,9 +29,9 @@ class AppRoute extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={App}/>
+                    <Route exact path="/" component={Login}/>
+                    <Route exact path="/feed" component={App}/>
                     <Route exact path="/profile" component={Profile}/>
-                    <Route exact path="/login" component={Login}/>
                     {/*<Route exact path="/application" component={Application}/>*/}
                     {/*<Route exact path="/404" component={PageNotFound}/>*/}
                     {/*<Redirect from="*" to="/404"/>*/}
