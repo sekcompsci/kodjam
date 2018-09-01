@@ -7,17 +7,17 @@ class FooterBar extends Component {
     render() {
         if (this.props.typeBar === "main") {
             return (
-                <Mainbar history={this.props.history} />
+                <Mainbar />
             )
         }
         else if (this.props.typeBar === "timeline") {
             return (
-                <PostTimelineBar history={this.props.history} isFirst={this.props.ForTimelineisFirst} />
+                <PostTimelineBar isFirst={this.props.ForTimelineisFirst} />
             )
         }
         else if (this.props.typeBar === "review") {
             return (
-                <PostReviewBar history={this.props.history} />
+                <PostReviewBar />
             )
         }
     }

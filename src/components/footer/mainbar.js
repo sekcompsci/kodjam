@@ -4,6 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import {Cookies, withCookies} from 'react-cookie';
 import {instanceOf} from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class Mainbar extends Component {
     state = {
@@ -12,34 +13,13 @@ class Mainbar extends Component {
 
     handleChange = (event, value) => {
         this.setState({value});
-
-        switch (value) {
-            case 0: {
-                this.props.history.push(`/rack`);
-
-                break;
-            }
-            case 1: {
-                this.props.history.push(`/flag`);
-
-                break;
-            }
-            case 2: {
-                this.props.history.push(`/profile/${this.props.cookies.get('FIREBASEUID')}`);
-
-                break;
-            }
-            default: {
-                this.props.history.push(`/feed`);
-            }
-        }
     };
 
     render() {
         return (
             <Paper square
                    style={{
-                       backgroundColor: '#dce775',
+                       backgroundColor: '#2980b9',
                        lineHeight: '46px',
                        textAlign: 'center',
                        width: '100%',
@@ -50,13 +30,19 @@ class Mainbar extends Component {
                 <Tabs
                     value={this.state.value}
                     onChange={this.handleChange}
-                    fullWidth
-                    indicatorColor="primary"
+                    indicatorColor="secondary"
                     textColor="primary"
+                    fullWidth
                 >
-                    <Tab key="Search" label="Search"/>
-                    <Tab key="Flag" label="Flag"/>
-                    <Tab key="Profile" label="Profile"/>
+                    <Tab key="Search" label={<Link to='/rank' style={{color: '#ecf0f1'}}>Search</Link>}/>
+                    <Tab key="Flag" label={<Link to='/feed' style={{color: '#ecf0f1'}}>Flag</Link>}/>
+                    <Tab key="Profile"
+                         label={
+                             <Link to={'/profile/' + this.props.cookies.get('FIREBASEUID')}
+                                   style={{color: '#ecf0f1'}}>Profile
+                             </Link>
+                         }
+                    />
                 </Tabs>
             </Paper>
         )

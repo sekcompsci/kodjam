@@ -1,9 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import firebase from "firebase";
-
-// import Home from './components/home/home';
-// import PageNotFound from './components/pagenotfound/pagenotfound';
 import App from './App'
 import Profile from './components/profile'
 import Login from './components/login'
@@ -28,15 +25,14 @@ class AppRoute extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <Switch>
-                    <Route exact path="/" component={Login}/>
-                    <Route exact path="/feed" component={App}/>
-                    <Route exact path="/profile/:uid" component={Profile}/>
-                    {/*<Route exact path="/application" component={Application}/>*/}
-                    {/*<Route exact path="/404" component={PageNotFound}/>*/}
-                    {/*<Redirect from="*" to="/404"/>*/}
-                    <Redirect from="*" to="/feed"/>
-                </Switch>
+                <App>
+                    <Switch>
+                        <Route exact path="/" component={Login}/>
+                        <Route exact path="/feed" component={() => <div>Hello World!</div>}/>
+                        <Route exact path="/profile/:uid" component={Profile}/>
+                        <Redirect from="*" to="/feed"/>
+                    </Switch>
+                </App>
             </BrowserRouter>
         );
     }

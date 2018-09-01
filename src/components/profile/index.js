@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Avatar, Button, Col, Row} from 'antd';
 import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import './profile.css';
-import Footer from '../footer';
 import ProfileFeed from '../profile-feed';
 import firebase from "firebase/app";
 import {Cookies, withCookies} from 'react-cookie';
@@ -164,7 +163,6 @@ class Profile extends React.Component {
                         uid={this.props.match.params.uid}
                     />
                 </div>
-                <Footer history={this.props.history} typeBar="main"/>
             </div>
         )
     }
