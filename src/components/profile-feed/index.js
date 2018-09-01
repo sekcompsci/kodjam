@@ -12,8 +12,8 @@ class ProfileFeed extends React.Component {
 
     render() {
         const {Meta} = Card;
-        const fav = {float: 'right'};
-        const favO = {float: 'right', color: '#f1c40f'};
+        const fav = {float: 'right', fontSize: '1.4rem'};
+        const favO = {...fav, color: '#f1c40f'};
 
         return (
             <Card

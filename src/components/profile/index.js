@@ -82,7 +82,7 @@ class Profile extends React.Component {
                 <div style={{background: '#ECECEC', width: '100%', paddingTop: '1px', paddingBottom: '10vh'}}>
                     <ProfileFeed
                         img="https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bec431d5c80ae862ceba47454d36d9cc&auto=format&fit=crop&w=1701&q=80"
-                        type="Post reviews"
+                        type="Post timeline"
                         description="ทริปลุยเขา เผาไฟป่า"
                     />
                     <ProfileFeed
@@ -92,7 +92,7 @@ class Profile extends React.Component {
                     />
                     <ProfileFeed
                         img="https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjI0MX0&s=436a11a0fee324bde54ffd8d515c3ab1&auto=format&fit=crop&w=1950&q=80"
-                        type="Post reviews"
+                        type="Post timeline"
                         description="มิชชันแก้ผ้าหน้าหนาว"
                     />
                 </div>
