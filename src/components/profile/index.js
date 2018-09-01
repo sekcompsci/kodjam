@@ -12,7 +12,7 @@ class Profile extends React.Component {
     render() {
         return <div>
             <header className="avatar-header">
-                <TiArrowLeftThick className="icon-app"/>
+                {/*<TiArrowLeftThick className="icon-app"/>*/}
                 <TiCogOutline className="icon-app" style={{float: 'right'}}/>
             </header>
             <Row type="flex" justify="center">

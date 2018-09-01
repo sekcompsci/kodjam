@@ -11,6 +11,7 @@ import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 // import PageNotFound from './components/pagenotfound/pagenotfound';
 import App from './App'
 import Profile from './components/profile'
+import Login from './components/login'
 
 class AppRoute extends React.Component {
     render() {
@@ -19,6 +20,7 @@ class AppRoute extends React.Component {
                 <Switch>
                     <Route exact path="/" component={App}/>
                     <Route exact path="/profile" component={Profile}/>
+                    <Route exact path="/login" component={Login}/>
                     {/*<Route exact path="/application" component={Application}/>*/}
                     {/*<Route exact path="/404" component={PageNotFound}/>*/}
                     {/*<Redirect from="*" to="/404"/>*/}
