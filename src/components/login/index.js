@@ -28,7 +28,6 @@ class Login extends Component {
         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
             (user) => {
                 this.setState({isSignedIn: !!user});
-                console.log(!!user);
 
                 if (!!user) {
                     this.props.setName(firebase.auth().currentUser.displayName);

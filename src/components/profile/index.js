@@ -6,6 +6,7 @@ import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import './profile.css';
 
 import Footer from '../footer';
+import firebase from "firebase";
 
 class Profile extends React.Component {
     render() {
@@ -50,18 +51,18 @@ class Profile extends React.Component {
             <h4 style={{paddingLeft: '10px'}}>Achievement</h4>
             <Row gutter={16} style={{padding: '0 10px'}}>
                 <Col span={4} style={{paddingLeft: '5%'}}>
-                    <Avatar icon="user" />
+                    <Avatar src="https://image.ibb.co/eoKofK/001_waterfall.png" alt="001_waterfall" />
                 </Col>
                 <Col span={4} style={{paddingLeft: '5%'}}>
-                    <Avatar>U</Avatar>
+                    <Avatar src="https://image.ibb.co/ndDELK/002_cityscape.png" alt="002_cityscape" />
                 </Col>
                 <Col span={4} style={{paddingLeft: '5%'}}>
-                    <Avatar>USER</Avatar>
+                    <Avatar src="https://image.ibb.co/mPLuLK/003_iceberg.png" alt="003_iceberg" />
                 </Col>
                 <Col span={4} style={{paddingLeft: '5%'}}>
-                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                    <Avatar src="https://image.ibb.co/c2uX7z/004_desert.png" alt="004_desert" />
                 </Col>
-                <Col span={8} style={{textAlign: 'right', padding: '5px 8%'}}>
+                <Col span={8} style={{textAlign: 'right', padding: '3px 8%'}}>
                     <a style={{fontSize: '14px'}}>View all</a>
                 </Col>
             </Row>
