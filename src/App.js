@@ -11,7 +11,6 @@ class App extends Component {
     return (
       <div className="App">
           <Header typeBar="search"></Header>
-          {/* <PostTimeline></PostTimeline> */}
           <PostReview></PostReview>
 
           <Footer typeBar="review" ForTimelineisFirst={true}></Footer>
