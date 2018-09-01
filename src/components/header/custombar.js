@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Icon } from 'antd';
 const Custombar=(props)=>{
     if(props.typeBar=="custom"){
-        if(props.addicon){
+        if(props.icon){
             return(
                 <div className="head">
                     <Icon  className="btn-left" type="arrow-left" />

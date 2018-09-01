@@ -1,35 +1,56 @@
 import React, {Component} from 'react';
-import {Menu} from 'antd';
-const PostTimelineBar=(props)=>{
-    if(props.isFirst){
-        return(
-            <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={['2']}
-            style={{lineHeight: '64px', textAlign: 'center', width: '100%', position: 'fixed', bottom: 0, left: 0}}
-        >
-        
-            <Menu.Item key="FlagBlue">FlagBlue</Menu.Item>
-            </Menu> 
-        )
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
-    }
-    else{
-        return(
-            <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={['2']}
-            style={{lineHeight: '64px', textAlign: 'center', width: '100%', position: 'fixed', bottom: 0, left: 0}}
-        >
-        
-            <Menu.Item key="FlagGreen">FlagGreen</Menu.Item>
-            <Menu.Item key="FlagRed">FlagRed</Menu.Item>
-            </Menu> 
-        )
+class PostTimelineBar extends Component{
+    state = {
+        value: 10,
+      };
+    
+      handleChange = (event, value) => {
+        this.setState({ value });
+      };
+      render(){
+        if(this.props.isFirst){
+            return(
+                <Paper square
+                style={{ backgroundColor:"#dce775",lineHeight: '46px', textAlign: 'center', width: '100%', position: 'fixed', bottom: 0, left: 0}}>
+                <Tabs
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  fullWidth
+                  indicatorColor="primary"
+                  textColor="primary"
+                >
+                  <Tab key="FlagBlue"  label="FlagBlue" />
+                </Tabs>
+              </Paper>
+            )
+    
+        }
+        else{
+            return(
+            <Paper square
+            style={{ backgroundColor:"#dce775",lineHeight: '46px', textAlign: 'center', width: '100%', position: 'fixed', bottom: 0, left: 0}}>
+            <Tabs
+              value={this.state.value}
+              onChange={this.handleChange}
+              fullWidth
+              indicatorColor="primary"
+              textColor="primary"
+            >
+              <Tab key="FlagGreen" label="FlagGreen" />
+              <Tab key="FlagBlue"  label="FlagBlue" />
+            </Tabs>
+          </Paper>
+            )
+    
+        }
 
-    }
+      }
+
+ 
     
 }
 export default PostTimelineBar

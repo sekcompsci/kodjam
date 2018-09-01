@@ -10,10 +10,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header typeBar="search"></Header>
+          <Header typeBar="main" icon={true} title="Timeline"></Header>
           <PostReview></PostReview>
+          {/* <PostTimeline></PostTimeline> */}
 
-          <Footer typeBar="review" ForTimelineisFirst={true}></Footer>
+          <Footer typeBar="main" ForTimelineisFirst={false}></Footer>
       </div>
     );
   }

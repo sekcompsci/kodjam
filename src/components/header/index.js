@@ -7,7 +7,7 @@ class HeaderBar extends Component {
     render() {
         if(this.props.typeBar=="main"){
             return(
-               <CustomBar typeBar="custom" addicon={true} addtitle="Username"></CustomBar>
+               <CustomBar typeBar="custom" icon={true} addtitle={this.props.title}></CustomBar>
             
             )
         }
