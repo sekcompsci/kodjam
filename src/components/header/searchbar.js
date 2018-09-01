@@ -1,20 +1,16 @@
 import React from 'react';
-import {AutoComplete, Icon, Input} from 'antd';
+import { Input } from 'antd';
 
-const dataSource = ['วัดพระแก้ว', 'ประตูท่าแพ', 'อ่างแก้วแพรวพราวรื่นรม'];
+const Search = Input.Search;
 
 const Complete = () => {
     return (
         <div className="head">
-            <AutoComplete
-                style={{width: 200}}
-                dataSource={dataSource}
-                placeholder="ค้นหา"
-                filterOption={(inputValue, option) => option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}
-            >
-                <Input suffix={<Icon type="search" className="certain-category-icon"/>}/>
-            </AutoComplete>
-
+            <Search
+                placeholder="search"
+                onSearch={value => console.log(value)}
+                style={{ width: 200 }}
+            />
         </div>
     );
 };
