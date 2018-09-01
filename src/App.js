@@ -9,8 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <PostReview></PostReview>
-          <Footer></Footer>
+          <PostTimeline></PostTimeline>
+          <Footer typeBar="review" ForTimelineisFirst={true}></Footer>
       </div>
     );
   }
