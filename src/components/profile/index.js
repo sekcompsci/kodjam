@@ -48,6 +48,24 @@ class Profile extends React.Component {
                     </div>
                 </Col>
             </Row>
+            <h4 style={{paddingLeft: '10px'}}>Achievement</h4>
+            <Row gutter={16} style={{padding: '0 10px'}}>
+                <Col span={4} style={{paddingLeft: '5%'}}>
+                    <Avatar icon="user" />
+                </Col>
+                <Col span={4} style={{paddingLeft: '5%'}}>
+                    <Avatar>U</Avatar>
+                </Col>
+                <Col span={4} style={{paddingLeft: '5%'}}>
+                    <Avatar>USER</Avatar>
+                </Col>
+                <Col span={4} style={{paddingLeft: '5%'}}>
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                </Col>
+                <Col span={8} style={{textAlign: 'right', padding: '5px 8%'}}>
+                    <a style={{fontSize: '14px'}}>View all</a>
+                </Col>
+            </Row>
             <Footer typeBar="main" />
         </div>
     }
