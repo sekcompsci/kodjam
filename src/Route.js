@@ -2,18 +2,28 @@ import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 
 // import Home from './components/home/home';
-// import Application from './containers/application';
-// import ApplicationApp from './containers/application.devices';
-// import Devices from './components/application/device';
-// import Freeboard from './components/freeboard/freeboard';
-// import Feed from './components/feed/feed';
-// import Nodepie from './components/nodepie/nodepie';
 // import PageNotFound from './components/pagenotfound/pagenotfound';
 import App from './App'
 import Profile from './components/profile'
 import Login from './components/login'
+import firebase from "firebase";
 
 class AppRoute extends React.Component {
+    constructor(props) {
+        super(props);
+
+        let config = {
+            apiKey: "AIzaSyBaJz9bECtxlDw4RnpbXE34LxH-2Nuy6eU",
+            authDomain: "eculture-kodjam.firebaseapp.com",
+            databaseURL: "https://eculture-kodjam.firebaseio.com",
+            projectId: "eculture-kodjam",
+            storageBucket: "eculture-kodjam.appspot.com",
+            messagingSenderId: "408877158212"
+        };
+
+        firebase.initializeApp(config);
+    }
+
     render() {
         return (
             <BrowserRouter>

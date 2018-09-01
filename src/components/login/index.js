@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import {BrowserRouter, Link} from 'react-router-dom'
 import firebase from 'firebase';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import {connect} from 'react-redux';
+import {setName, setProfile} from "../../actions/user";
 
 class Login extends Component {
     state = {
@@ -20,23 +23,18 @@ class Login extends Component {
         }
     };
 
-    constructor(props) {
-        super(props);
-        var config = {
-            apiKey: "AIzaSyBaJz9bECtxlDw4RnpbXE34LxH-2Nuy6eU",
-            authDomain: "eculture-kodjam.firebaseapp.com",
-            databaseURL: "https://eculture-kodjam.firebaseio.com",
-            projectId: "eculture-kodjam",
-            storageBucket: "eculture-kodjam.appspot.com",
-            messagingSenderId: "408877158212"
-        };
-        firebase.initializeApp(config);
-    }
-
     // Listen to the Firebase Auth state and set the local state.
     componentDidMount() {
         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
-            (user) => this.setState({isSignedIn: !!user})
+            (user) => {
+                this.setState({isSignedIn: !!user});
+                console.log(!!user);
+
+                if (!!user) {
+                    this.props.setName(firebase.auth().currentUser.displayName);
+                    this.props.setProfile(firebase.auth().currentUser.photoURL + '?height=300');
+                }
+            }
         );
     }
 
@@ -68,7 +66,7 @@ class Login extends Component {
                     {/* <Header title="Simple Firebase App" /> */}
                     <br></br>
                     <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-                    <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/>
+                    <img id="photo" alt="profile" className="pic" src={firebase.auth().currentUser.photoURL}/>
                     <br></br>
                     <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
                 </div>
@@ -82,11 +80,16 @@ class Login extends Component {
                     <div className="column is-6">
                     </div>
                 </div>
+                <a onClick={()=>{this.props.history.push(`/profile`)}}>Profile</a>
             </div>
-
         );
     }
 }
 
-export default Login;
+const mapDispatchToProps = {
+    setName,
+    setProfile
+};
+
+export default connect(null, mapDispatchToProps)(Login);
 

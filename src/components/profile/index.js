@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Avatar, Col, Row} from 'antd';
 import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
-import {createApp} from '../../actions/application';
 import './profile.css';
 
 import Footer from '../footer';
@@ -12,11 +11,11 @@ class Profile extends React.Component {
     render() {
         return <div>
             <header className="avatar-header">
-                {/*<TiArrowLeftThick className="icon-app"/>*/}
+                <TiArrowLeftThick className="icon-app" onClick={()=>{this.props.history.push(`/login`)}}/>
                 <TiCogOutline className="icon-app" style={{float: 'right'}}/>
             </header>
             <Row type="flex" justify="center">
-                <Col className="avatar"><Avatar shape="square" size={120} icon="user"/></Col>
+                <Col className="avatar"><Avatar shape="square" size={120} src={this.props.profile_picture}/></Col>
             </Row>
             <div style={{textAlign: 'center', paddingTop: '5px'}}>
                 <div className="profile-name">{this.props.name}</div>
@@ -81,13 +80,10 @@ Profile.defaultProps = {
 
 const mapStateToProps = state => {
     return {
-        name: state.name,
+        name: state.users.name,
+        profile_picture: state.users.picture,
         description: "ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น"
     }
 };
 
-const mapDispatchToProps = {
-    createApp
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile)
+export default connect(mapStateToProps)(Profile)
