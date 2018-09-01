@@ -4,7 +4,7 @@ import firebase from "firebase";
 import App from './App';
 import Profile from './components/profile';
 import Login from './components/login';
-import Header from './components/header';
+import Feed from './components/feed';
 
 class AppRoute extends React.Component {
     constructor(props) {
@@ -28,16 +28,7 @@ class AppRoute extends React.Component {
                 <Switch>
                     <Route exact path="/" component={Login}/>
                     <App>
-                        <Route exact path="/feed" component={() =>
-                            <Header>
-                                <p>Hello World!</p>
-                                <p>Hello World!</p>
-                                <p>Hello World!</p>
-                                <p>Hello World!</p>
-                                <p>Hello World!</p>
-                                <p>Hello World!</p>
-                            </Header>
-                        }/>
+                        <Route exact path="/feed" component={Feed}/>
                         <Route exact path="/profile/:uid" component={Profile}/>
                     </App>
                 </Switch>
