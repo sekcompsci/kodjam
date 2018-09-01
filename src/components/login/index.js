@@ -5,7 +5,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import {connect} from 'react-redux';
 import {setName, setProfile} from "../../actions/user";
 import './login.css';
-import { Form, Icon, Input, Button, Divider } from 'antd';
+import {Button, Divider, Form, Icon, Input} from 'antd';
 
 class Login extends Component {
     state = {
@@ -54,30 +54,35 @@ class Login extends Component {
 
     render() {
         const FormItem = Form.Item;
-        const { getFieldDecorator } = this.props.form;
+        const {getFieldDecorator} = this.props.form;
 
         return (
             <div>
-                <div className="background-image" />
+                <div className="background-image"/>
                 <div className="content">
                     {/*<h1>Login</h1>*/}
                     <Form className="login-form">
                         <FormItem>
                             {getFieldDecorator('userName', {
-                                rules: [{ required: true, message: 'Please input your username!' }],
+                                rules: [{required: true, message: 'Please input your username!'}],
                             })(
-                                <Input className="inputOpasity" prefix={<Icon type="user" style={{ color: 'rgb(217, 217, 217)' }} />} placeholder="Username" />
+                                <Input className="inputOpasity"
+                                       prefix={<Icon type="user" style={{color: 'rgb(217, 217, 217)'}}/>}
+                                       placeholder="Username"/>
                             )}
                         </FormItem>
                         <FormItem>
                             {getFieldDecorator('password', {
-                                rules: [{ required: true, message: 'Please input your Password!' }],
+                                rules: [{required: true, message: 'Please input your Password!'}],
                             })(
-                                <Input className="inputOpasity" prefix={<Icon type="lock" style={{ color: 'rgb(217, 217, 217)' }} />} type="password" placeholder="Password" />
+                                <Input className="inputOpasity"
+                                       prefix={<Icon type="lock" style={{color: 'rgb(217, 217, 217)'}}/>}
+                                       type="password" placeholder="Password"/>
                             )}
                         </FormItem>
                         <FormItem>
-                            <Button htmlType="submit" className={["login-form-button", "inputOpasity"]} style={{width: '100%', color: 'rgb(217, 217, 217)'}}>
+                            <Button htmlType="submit" className={["login-form-button", "inputOpasity"]}
+                                    style={{width: '100%', color: 'rgb(217, 217, 217)'}}>
                                 Log in
                             </Button>
                         </FormItem>

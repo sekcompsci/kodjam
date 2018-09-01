@@ -26,7 +26,7 @@ class ProfileFeed extends React.Component {
                     title={
                         <div>
                             <b>{this.props.type}</b>
-                            <Icon style={this.state.fav?favO:fav} type={this.state.fav ? 'star' : 'star-o'}
+                            <Icon style={this.state.fav ? favO : fav} type={this.state.fav ? 'star' : 'star-o'}
                                   onClick={this.changeFav}/>
                         </div>
                     }

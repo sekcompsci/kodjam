@@ -5,20 +5,19 @@ import SearchBar from './searchbar'
 
 class HeaderBar extends Component {
     render() {
-        if(this.props.typeBar === "main"){
-            return(
-               <CustomBar typeBar="custom" icon={true} addtitle={this.props.title}></CustomBar>
-            
+        if (this.props.typeBar === "main") {
+            return (
+                <CustomBar typeBar="custom" icon={true} addtitle={this.props.title}/>
             )
         }
-        else if(this.props.typeBar === "search"){
-            return(
-                <SearchBar />
+        else if (this.props.typeBar === "search") {
+            return (
+                <SearchBar/>
             )
         }
-        else{
-            return(
-             <div />
+        else {
+            return (
+                <div/>
             )
         }
     }

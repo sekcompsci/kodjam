@@ -1,25 +1,26 @@
-import React, {Component} from 'react';
-import { Icon } from 'antd';
-const Custombar=(props)=>{
-    if(props.typeBar=="custom"){
-        if(props.icon){
-            return(
+import React from 'react';
+import {Icon} from 'antd';
+
+const Custombar = (props) => {
+    if (props.typeBar === "custom") {
+        if (props.icon) {
+            return (
                 <div className="head">
-                    <Icon  className="btn-left" type="arrow-left" />
+                    <Icon className="btn-left" type="arrow-left"/>
                     <h3 className="title">{props.addtitle}</h3>
                 </div>
             )
         }
-        else{
-            return(
+        else {
+            return (
                 <div className="head">
                     <h3 className="title">{props.addtitle}</h3>
                 </div>
             )
 
         }
-        
+
     }
-    
-}
+};
+
 export default Custombar
