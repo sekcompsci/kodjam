@@ -1,7 +1,9 @@
+@import "../../styles/_colors.scss";
+
 .avatar-header {
     height: 20vh;
     width: 100%;
-    background: #222222;
+    background: $black;
 }
 
 .avatar {
@@ -20,7 +22,7 @@
 }
 
 .profile-stat {
-    border: 1px solid #e8e8e8;
+    border: 1px solid $gray;
     color: #000;
     height: 10vh;
     text-align: center;

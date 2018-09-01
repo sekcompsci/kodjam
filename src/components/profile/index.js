@@ -3,9 +3,8 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Avatar, Col, Row} from 'antd';
 import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
-import './profile.scss';
-
 import {createApp} from '../../actions/application';
+import './profile.css';
 
 class Profile extends React.Component {
     render() {
