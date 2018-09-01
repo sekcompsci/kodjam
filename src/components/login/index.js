@@ -4,6 +4,8 @@ import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import {connect} from 'react-redux';
 import {setName, setProfile} from "../../actions/user";
+import './login.css';
+import { Form, Icon, Input, Button, Divider } from 'antd';
 
 class Login extends Component {
     state = {
@@ -14,16 +16,15 @@ class Login extends Component {
     uiConfig = {
         signInFlow: 'popup',
         signInOptions: [
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
         callbacks: {
-            signInSuccess: () => false
+            signInSuccess: () => this.props.history.push(`/profile`)
         }
     };
 
     // Listen to the Firebase Auth state and set the local state.
-    componentDidMount() {
+    componentWillMount() {
         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
             (user) => {
                 if (!!user) {
@@ -52,45 +53,40 @@ class Login extends Component {
     }
 
     render() {
-        if (!this.state.isSignedIn) {
-            return (
-                <div className="container">
-                    <div className="authen">
-                        <h1>FirebaseUI-React</h1>
-                        <h1>with Firebase Authentication</h1>
-                        {/* <Header title="Simple Firebase App" /> */}
-                        <br></br>
-                        <p>Please sign-in:</p>
-                        <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
-                    </div>
-                </div>
-            );
-        }
+        const FormItem = Form.Item;
+        const { getFieldDecorator } = this.props.form;
+
         return (
-            <div className="container">
-                <div className="authen">
-                    <h1>FirebaseUI-React</h1>
-                    <h1>with Firebase Authentication</h1>
-                    {/* <Header title="Simple Firebase App" /> */}
-                    <br></br>
-                    <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-                    <img id="photo" alt="profile" className="pic" src={firebase.auth().currentUser.photoURL}/>
-                    <br></br>
-                    <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+            <div>
+                <div className="background-image" />
+                <div className="content">
+                    {/*<h1>Login</h1>*/}
+                    <Form className="login-form">
+                        <FormItem>
+                            {getFieldDecorator('userName', {
+                                rules: [{ required: true, message: 'Please input your username!' }],
+                            })(
+                                <Input className="inputOpasity" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                            )}
+                        </FormItem>
+                        <FormItem>
+                            {getFieldDecorator('password', {
+                                rules: [{ required: true, message: 'Please input your Password!' }],
+                            })(
+                                <Input className="inputOpasity" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                            )}
+                        </FormItem>
+                        <FormItem>
+                            <Button htmlType="submit" className={["login-form-button", "inputOpasity"]} style={{width: '100%'}}>
+                                Log in
+                            </Button>
+                        </FormItem>
+                    </Form>
+                    <Divider>OR</Divider>
+                    <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
                 </div>
-                <div className="columns">
-                    <div className="column is-3"></div>
-                    <div className="column is-6">
-                    </div>
-                </div>
-                <div className="columns">
-                    <div className="column is-3"></div>
-                    <div className="column is-6">
-                    </div>
-                </div>
-                <a onClick={()=>{this.props.history.push(`/profile`)}}>Profile</a>
             </div>
-        );
+        )
     }
 }
 
@@ -99,5 +95,5 @@ const mapDispatchToProps = {
     setProfile
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default Form.create()(connect(null, mapDispatchToProps)(Login));
 
