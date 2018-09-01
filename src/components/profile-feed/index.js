@@ -22,7 +22,7 @@ class ProfileFeed extends React.Component {
                 actions={this.props.own ? [<Icon type="edit"/>, <Icon type="ellipsis"/>] : ''}
             >
                 <Meta
-                    avatar={<Avatar src={this.props.profile_picture}/>}
+                    avatar={<Avatar src={this.props.profile}/>}
                     title={
                         <div>
                             <b>{this.props.type}</b>

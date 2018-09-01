@@ -1,4 +1,4 @@
-$img-blur: blur(5px);
+$img-blur: blur(4px);
 
 .background-image {
   position: fixed;
@@ -40,11 +40,16 @@ $img-blur: blur(5px);
   }
 
   .login-form {
-    margin: 18vh 5vw 0;
+    margin: 22vh 5vw 0;
   }
 
   .inputOpasity {
-    opacity: 0.5;
+    //opacity: 0.5;
+    background-color : transparent;
+
+    .ant-input {
+      background-color : transparent;
+    }
   }
 
   .ant-divider-inner-text {

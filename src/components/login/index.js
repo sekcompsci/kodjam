@@ -19,7 +19,7 @@ class Login extends Component {
             firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
         callbacks: {
-            signInSuccess: () => this.props.history.push(`/profile`)
+            signInSuccess: () => this.props.history.push(`/`)
         }
     };
 
@@ -66,18 +66,18 @@ class Login extends Component {
                             {getFieldDecorator('userName', {
                                 rules: [{ required: true, message: 'Please input your username!' }],
                             })(
-                                <Input className="inputOpasity" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                                <Input className="inputOpasity" prefix={<Icon type="user" style={{ color: 'rgb(217, 217, 217)' }} />} placeholder="Username" />
                             )}
                         </FormItem>
                         <FormItem>
                             {getFieldDecorator('password', {
                                 rules: [{ required: true, message: 'Please input your Password!' }],
                             })(
-                                <Input className="inputOpasity" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                                <Input className="inputOpasity" prefix={<Icon type="lock" style={{ color: 'rgb(217, 217, 217)' }} />} type="password" placeholder="Password" />
                             )}
                         </FormItem>
                         <FormItem>
-                            <Button htmlType="submit" className={["login-form-button", "inputOpasity"]} style={{width: '100%'}}>
+                            <Button htmlType="submit" className={["login-form-button", "inputOpasity"]} style={{width: '100%', color: 'rgb(217, 217, 217)'}}>
                                 Log in
                             </Button>
                         </FormItem>
