@@ -47,6 +47,7 @@ class Login extends Component {
                                 achievement: 0,
                                 caption: ""
                             };
+
                             db.update(jsonObj)
                         }
                     });
