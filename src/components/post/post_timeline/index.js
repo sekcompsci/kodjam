@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Icon, Form,Button,Upload } from 'antd';
 import { MdAccountBalance } from "react-icons/md";
+import '../post.css';
 const { TextArea } = Input;
 const FormItem = Form.Item;
 
@@ -19,7 +20,7 @@ class PostTimeline extends Component {
       wrapperCol: { span: 14 },
     };
     return (
-      <div style={{ padding: '2em' }}>
+      <div className="layout-post">
         <FormItem
          {...formItemLayout}>
         <Input placeholder="ชื่อทริป" prefix={ <MdAccountBalance style={{ color: 'rgba(0,0,0,.25)' }}></MdAccountBalance> } />
@@ -33,7 +34,7 @@ class PostTimeline extends Component {
             getValueFromEvent: this.normFile,
           })(
             <Upload  name="logo" action="/upload.do" listType="picture">
-              <Button style={{ color: 'rgba(0,0,0,.25)' }}>
+              <Button style={{ color: 'rgba(0,0,0,.25)'}}>
                 <Icon type="upload" /> อัพโหลดรูปภาพของคุณ
               </Button>
             </Upload>
@@ -50,5 +51,5 @@ class PostTimeline extends Component {
     )
   }
 }
-const WrappedPostTimeline = Form.create()(PostTimeline);
-export default WrappedPostTimeline
+
+export default Form.create()(PostTimeline)

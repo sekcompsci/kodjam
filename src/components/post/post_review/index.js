@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Input, Icon, Form,Button,Upload } from 'antd';
-import { MdAccountBalance } from "react-icons/md";
+import '../post.css';
 const { TextArea } = Input;
 const FormItem = Form.Item;
+
 
 class PostReview extends Component {
   normFile = (e) => {
@@ -13,13 +14,12 @@ class PostReview extends Component {
     return e && e.fileList;
   }
   render() {
-    const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
     };
     return (
-      <div style={{ padding: '2em' }}>
+      <div className="layout-post">
         <FormItem
          {...formItemLayout}>
         <Input placeholder="หัวข้อรีวิว" prefix={ <Icon type="book" style={{ color: 'rgba(0,0,0,.25)' }}/> } />
@@ -36,5 +36,4 @@ class PostReview extends Component {
     )
   }
 }
-const WrappedPostReview = Form.create()(PostReview);
-export default WrappedPostReview
+export default Form.create()(PostReview);
