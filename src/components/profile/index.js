@@ -14,7 +14,7 @@ class Profile extends React.Component {
 
     changeFollow = () => {
         this.setState({follow: !this.state.follow});
-    }
+    };
 
     render() {
         return <div>
@@ -22,7 +22,7 @@ class Profile extends React.Component {
                 <TiArrowLeftThick className="icon-app" onClick={() => {
                     this.props.history.push(`/login`)
                 }}/>
-                <TiCogOutline className="icon-app" style={{float: 'right'}}/>
+                {this.props.own ? '':<TiCogOutline className="icon-app" style={{float: 'right'}}/>}
             </header>
             <Row type="flex" justify="center">
                 <Col className="avatar"><Avatar shape="square" size={120} src={this.props.profile_picture}/></Col>
@@ -59,8 +59,8 @@ class Profile extends React.Component {
                     </div>
                 </Col>
             </Row>
-            <h4 style={{paddingLeft: '10px'}}>Achievement</h4>
-            <Row gutter={16} style={{padding: '0 10px'}}>
+            <h4 className="achievement">Achievement</h4>
+            <Row gutter={16} className="badge">
                 <Col span={4} style={{paddingLeft: '5%'}}>
                     <Avatar src="https://image.ibb.co/eoKofK/001_waterfall.png" alt="001_waterfall"/>
                 </Col>
@@ -77,6 +77,7 @@ class Profile extends React.Component {
                     <a style={{fontSize: '14px'}}>View all</a>
                 </Col>
             </Row>
+            <div style={{width: '100%', height: '5px', background: '#000'}} />
             <Footer typeBar="main"/>
         </div>
     }

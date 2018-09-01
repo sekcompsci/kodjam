@@ -1,12 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
+import firebase from "firebase";
 
 // import Home from './components/home/home';
 // import PageNotFound from './components/pagenotfound/pagenotfound';
 import App from './App'
 import Profile from './components/profile'
 import Login from './components/login'
-import firebase from "firebase";
+
 
 class AppRoute extends React.Component {
     constructor(props) {
