@@ -21,6 +21,7 @@ class Profile extends React.Component {
         caption: "",
         follow: false,
         userpath: 'Users/' + this.props.cookies.get('FIREBASEUID'),
+        hostpath: 'Users/' + this.props.match.params.uid,
         own: this.props.match.params.uid === this.props.cookies.get('FIREBASEUID')
     };
     followState = () => {
@@ -71,6 +72,7 @@ class Profile extends React.Component {
             })
         })
 
+        
     }
 
     render() {

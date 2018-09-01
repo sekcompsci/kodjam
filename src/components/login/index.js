@@ -44,7 +44,7 @@ class Login extends Component {
                                 following_n: 0,
                                 favorite: 0,
                                 timeline: 0,
-                                achievement: 0,
+                                achievement: 5,
                                 caption: ""
                             };
 
