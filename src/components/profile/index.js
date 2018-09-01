@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Avatar, Button, Col, Row} from 'antd';
 import {TiArrowLeftThick, TiCogOutline} from "react-icons/ti";
 import './profile.css';
-import Footer from '../footer';
 import ProfileFeed from '../profile-feed';
 import firebase from "firebase/app";
 import {Cookies, withCookies} from 'react-cookie';
@@ -145,6 +144,7 @@ class Profile extends React.Component {
                         type="ได้โพส ไทม์ไลน์"
                         description="ทริปลุยเขา เผาไฟป่า"
                         own={this.state.own}
+                        uid={this.props.match.params.uid}
                     />
                     <ProfileFeed
                         img="https://images.unsplash.com/photo-1524027556923-66e7ec51e251?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2125b2ecf005515f7701153a086d4789&auto=format&fit=crop&w=1950&q=80"
@@ -152,6 +152,7 @@ class Profile extends React.Component {
                         type="ได้โพส รีวิว"
                         description="เผาเสร็จแล้ว เที่ยวเขาหัวโล้นได้"
                         own={this.state.own}
+                        uid={this.props.match.params.uid}
                     />
                     <ProfileFeed
                         img="https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjI0MX0&s=436a11a0fee324bde54ffd8d515c3ab1&auto=format&fit=crop&w=1950&q=80"
@@ -159,9 +160,9 @@ class Profile extends React.Component {
                         type="ได้โพส ไทม์ไลน์"
                         description="มิชชันแก้ผ้าหน้าหนาว"
                         own={this.state.own}
+                        uid={this.props.match.params.uid}
                     />
                 </div>
-                <Footer history={this.props.history} typeBar="main"/>
             </div>
         )
     }

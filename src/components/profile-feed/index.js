@@ -14,13 +14,12 @@ class ProfileFeed extends React.Component {
         timeline: 0,
         achievement: 0,
         caption: "",
-        follow: false
+        follow: false,
+        userpath: 'Users/' + this.props.uid
     };
 
     componentWillMount() {
-
-        let userpath = 'Users/' + 'bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
-        let db_userpath = firebase.database().ref(userpath)
+        let db_userpath = firebase.database().ref(this.state.userpath);
 
         db_userpath.on('value', ss => {
             this.setState({
@@ -38,8 +37,7 @@ class ProfileFeed extends React.Component {
     }
 
     changeFav = () => {
-        let userpath = 'Users/' + 'bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
-        let db_userpath = firebase.database().ref(userpath)
+        let db_userpath = firebase.database().ref(this.state.userpath);
 
         if (this.state.count % 2 === 0) {
             db_userpath.set({
