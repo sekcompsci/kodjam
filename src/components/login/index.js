@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Link} from 'react-router-dom'
 import firebase from 'firebase';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
@@ -27,12 +26,22 @@ class Login extends Component {
     componentDidMount() {
         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
             (user) => {
-                this.setState({isSignedIn: !!user});
-
                 if (!!user) {
+                    let profilePath = 'Profile/' + firebase.auth().currentUser.uid;
+                    let dbprofile = firebase.database().ref(profilePath);
+
+                    let jsonObj = {
+                        username: firebase.auth().currentUser.displayName,
+                        profileImage: firebase.auth().currentUser.photoURL
+                    };
+
+                    dbprofile.update(jsonObj);
+
                     this.props.setName(firebase.auth().currentUser.displayName);
                     this.props.setProfile(firebase.auth().currentUser.photoURL + '?height=300');
                 }
+
+                this.setState({isSignedIn: !!user});
             }
         );
     }
