@@ -25,14 +25,14 @@ class AppRoute extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <App>
                     <Switch>
                         <Route exact path="/" component={Login}/>
-                        <Route exact path="/feed" component={() => <div>Hello World!</div>}/>
-                        <Route exact path="/profile/:uid" component={Profile}/>
-                        <Redirect from="*" to="/feed"/>
+                        <App>
+                            <Route exact path="/feed" component={() => <div>Hello World!</div>}/>
+                            <Route exact path="/profile/:uid" component={Profile}/>
+                            <Redirect from="*" to="/feed"/>
+                        </App>
                     </Switch>
-                </App>
             </BrowserRouter>
         );
     }
