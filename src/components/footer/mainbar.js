@@ -30,9 +30,9 @@ class Mainbar extends Component {
                     indicatorColor="primary"
                     textColor="primary"
                 >
-                    <Tab key="Search" label="Search"/>
-                    <Tab key="Flag" label="Flag"/>
-                    <Tab key="Profile" label="Profile"/>
+                    <Tab key="Search" label="Search" onClick={() => this.props.history.push(`/search`)}/>
+                    <Tab key="Flag" label="Flag" onClick={() => this.props.history.push(`/timeline`)}/>
+                    <Tab key="Profile" label="Profile" onClick={() => this.props.history.push(`/profile`)}/>
                 </Tabs>
             </Paper>
         )
