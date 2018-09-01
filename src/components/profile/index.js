@@ -18,12 +18,13 @@ class Profile extends React.Component {
         timeline: 0,
         achievement: 0,
         caption: "",
-        follow: false
+        follow: false,
+        userpath: 'Users/' + this.props.uid
     };
 
     componentWillMount() {
-        let userpath = 'Users/bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
-        let db_userpath = firebase.database().ref(userpath);
+        console.log(this.state.userpath);
+        let db_userpath = firebase.database().ref(this.state.userpath);
 
         db_userpath.on('value', ss => {
             this.setState({
@@ -42,8 +43,7 @@ class Profile extends React.Component {
     }
 
     followState = () => {
-        let userpath = 'Users/bTFaYKdcpbYI94fbEsdtsLa8tbN2'; // userid (target)
-        let db_userpath = firebase.database().ref(userpath);
+        let db_userpath = firebase.database().ref(this.state.userpath);
         
         if (this.state.follow === false) {
             db_userpath.set({
@@ -175,9 +175,7 @@ Profile.defaultProps = {
 
 const mapStateToProps = state => {
     return {
-        name: state.users.name || 'โคตรแจ่ม จุงเบย',
-        profile_picture: state.users.picture,
-        description: "ฝันอะไรไว้หลากหลาย เป็นอะไรก็ได้ที่อยากเป็น"
+        uid: state.users.uid
     }
 };
 

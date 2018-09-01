@@ -3,9 +3,10 @@ import firebase from 'firebase';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import {connect} from 'react-redux';
-import {setName, setProfile} from "../../actions/user";
+import {setUserID} from "../../actions/user";
 import './login.css';
 import {Button, Divider, Form, Icon, Input} from 'antd';
+import { withCookies, Cookies } from 'react-cookie';
 
 class Login extends Component {
     state = {
@@ -30,7 +31,8 @@ class Login extends Component {
                 this.setState({ isSignedIn: user });
                 if (user) {
                     let userpath = 'Users/' + firebase.auth().currentUser.uid;
-                    let db = firebase.database().ref(userpath)
+                    let db = firebase.database().ref(userpath);
+
                     db.on('value', ss => {
                         // Facebook Login Only
                         if (ss.val() === null) {
@@ -43,12 +45,12 @@ class Login extends Component {
                                 timeline: 0,
                                 achievement: 0,
                                 caption: ""
-                            }
+                            };
                             db.update(jsonObj)
                         }
-                    })
-                    // this.props.setName(firebase.auth().currentUser.displayName);
-                    // this.props.setProfile(firebase.auth().currentUser.photoURL + '?height=300');
+                    });
+
+                    this.props.setUserID(firebase.auth().currentUser.uid);
                 }
             }
         );
@@ -103,8 +105,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = {
-    setName,
-    setProfile
+    setUserID
 };
 
 export default Form.create()(connect(null, mapDispatchToProps)(Login));

@@ -1,8 +1,9 @@
-import {SET_NAME, SET_PROFILE} from '../actions/user';
+import {SET_NAME, SET_PROFILE, SET_USER_ID} from '../actions/user';
 
 const initState = {
     name: null,
-    picture: null
+    picture: null,
+    uid: null
 };
 
 function Users(state = initState, action) {
@@ -11,6 +12,8 @@ function Users(state = initState, action) {
             return {...state, name: action.name};
         case SET_PROFILE:
             return {...state, picture: action.url};
+        case SET_USER_ID:
+            return {...state, uid: action.uid};
         default:
             return state;
     }
