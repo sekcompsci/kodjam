@@ -27,7 +27,7 @@ class Feed extends React.Component {
                                     <FeedItem key={index}
                                               img={obj.images}
                                               profile={obj.title}
-                                              type={obj.category}
+                                              type={obj.title}
                                               description={obj.Description}
                                     />
                                 )
