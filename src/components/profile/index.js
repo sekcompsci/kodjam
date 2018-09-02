@@ -69,7 +69,7 @@ class Profile extends React.Component {
                 achievement: ss.val().achievement,
                 caption: ss.val().caption,
                 userProfile: ss.val().userimage + '?height=300'
-            })
+            });
         })
 
         
@@ -79,7 +79,7 @@ class Profile extends React.Component {
         return (
             <div>
                 <header className="avatar-header">
-                    <TiArrowLeftThick className="icon-app" onClick={() => {
+                    <TiArrowLeftThick w onClick={() => {
                         this.props.selectTab(0);
                         this.props.history.push(`/feed`);
                     }}/>

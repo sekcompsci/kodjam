@@ -5,6 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import {Card} from 'antd';
+import {Link} from 'react-router-dom';
 import Header from '../header';
 
 const {Meta} = Card;
@@ -20,7 +21,7 @@ const styles = theme => ({
 function SimpleList(props) {
     const {classes} = props;
     return (
-        <Header mode = "navigator">
+        <Header mode="navigator">
             <div style={{
                 width: '100%',
                 backgroundColor: '#ECECEC',
@@ -34,16 +35,18 @@ function SimpleList(props) {
                             <ListItemText><h2>โปรโฟล์</h2></ListItemText>
                         </ListItem>
                         <ListItem button>
-                            <Card
-                                hoverable
-                                style={{width: '100%', height: '50%', margin: '5vh'}}
-                                cover={<img alt="example"
-                                            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"/>}
-                            >
-                                <Meta
-                                    title="Apo"
-                                />
-                            </Card>
+                            <Link to='/profile/ssDPcDNbIxapAjHyCKzNz5sjsSj2'>
+                                <Card
+                                    hoverable
+                                    style={{margin: '20px 10px'}}
+                                    cover={<img alt="example"
+                                                src="https://graph.facebook.com/10210470907523943/picture?height=300"/>}
+                                >
+                                    <Meta
+                                        title="Sirawit Moonrinta"
+                                    />
+                                </Card>
+                            </Link>
                         </ListItem>
                         <ListItem button>
                             <Card

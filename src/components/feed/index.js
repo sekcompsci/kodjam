@@ -7,10 +7,10 @@ import firebase from 'firebase';
 class Feed extends React.Component {
     state = {
         data: null,
-    }
+    };
 
     componentWillMount() {
-        let db = firebase.database().ref('/')
+        let db = firebase.database().ref('/');
         db.on('value', data => {
             this.setState({data: data.val().Data.E});
         })
