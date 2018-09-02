@@ -29,6 +29,12 @@ class AppRoute extends React.Component {
                     <Route exact path="/" component={Login}/>
                     <App>
                         <Route exact path="/feed" component={Feed}/>
+                        <Route exact path="/flag" component={()=>
+                            <div style={{
+                                height: '100vh',
+                                background: 'url("https://tech.mthai.com/app/uploads/maps.png")',
+                                backgroundPosition: 'center right'
+                            }}/>}/>
                         <Route exact path="/profile/:uid" component={Profile}/>
                     </App>
                 </Switch>
