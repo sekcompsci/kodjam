@@ -31,6 +31,7 @@ class FeedItem extends React.Component {
                     }
                     description={this.props.description}
                 />
+                <a style={{float: 'right', marginTop: '10px'}}>อ่านเพิ่มเติม</a>
             </Card>
         )
     }

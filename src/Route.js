@@ -5,6 +5,7 @@ import App from './App';
 import Profile from './components/profile';
 import Login from './components/login';
 import Feed from './components/feed';
+import Search from './components/search';
 
 class AppRoute extends React.Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class AppRoute extends React.Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Login}/>
+                    <Route exact path="/search" component={Search}/>
                     <App>
                         <Route exact path="/feed" component={Feed}/>
                         <Route exact path="/flag" component={()=>
