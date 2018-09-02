@@ -20,8 +20,8 @@ class Profile extends React.Component {
         achievement: 0,
         caption: "",
         follow: false,
-        userpath: 'Users/' + this.props.cookies.get('FIREBASEUID'),
-        hostpath: 'Users/' + this.props.match.params.uid,
+        hostpath: 'Users/' + this.props.cookies.get('FIREBASEUID'),
+        userpath: 'Users/' + this.props.match.params.uid,
         own: this.props.match.params.uid === this.props.cookies.get('FIREBASEUID')
     };
     followState = () => {
